@@ -1,12 +1,12 @@
 {
-    "name": "finller/laravel-pappers",
+    "name": "elegantly/laravel-pappers",
     "description": "pappers.fr API for Laravel",
     "keywords": [
-        "Finller",
+        "Elegantly",
         "laravel",
         "laravel-pappers"
     ],
-    "homepage": "https://github.com/finller/laravel-pappers",
+    "homepage": "https://github.com/ElegantEngineeringTech/laravel-pappers",
     "license": "MIT",
     "authors": [
         {
@@ -38,13 +38,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Finller\\Pappers\\": "src/",
-            "Finller\\Pappers\\Database\\Factories\\": "database/factories/"
+            "Elegantly\\Pappers\\": "src/",
+            "Elegantly\\Pappers\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Finller\\Pappers\\Tests\\": "tests/",
+            "Elegantly\\Pappers\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -76,10 +76,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Finller\\Pappers\\PappersServiceProvider"
+                "Elegantly\\Pappers\\PappersServiceProvider"
             ],
             "aliases": {
-                "Pappers": "Finller\\Pappers\\Facades\\Pappers"
+                "Pappers": "Elegantly\\Pappers\\Facades\\Pappers"
             }
         }
     },

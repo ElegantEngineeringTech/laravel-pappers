@@ -1,8 +1,8 @@
 <?php
 
-namespace Finller\Pappers;
+namespace Elegantly\Pappers;
 
-use Finller\Pappers\Integrations\Pappers\PappersConnector;
+use Elegantly\Pappers\Integrations\Pappers\PappersConnector;
 
 class Pappers
 {

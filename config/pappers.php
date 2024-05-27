@@ -1,6 +1,6 @@
 <?php
 
-// config for Finller/Pappers
+// config for Elegantly/Pappers
 
 return [
     'token' => env('PAPPERS_TOKEN'),

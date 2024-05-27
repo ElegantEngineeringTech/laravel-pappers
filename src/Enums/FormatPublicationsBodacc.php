@@ -1,6 +1,6 @@
 <?php
 
-namespace Finller\Pappers\Enums;
+namespace Elegantly\Pappers\Enums;
 
 enum FormatPublicationsBodacc: string
 {

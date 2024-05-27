@@ -1,5 +1,5 @@
 <?php
 
-use Finller\Pappers\Tests\TestCase;
+use Elegantly\Pappers\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

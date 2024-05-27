@@ -1,6 +1,6 @@
 <?php
 
-namespace Finller\Pappers\Database\Factories;
+namespace Elegantly\PappersDatabase\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

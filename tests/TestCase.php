@@ -1,8 +1,8 @@
 <?php
 
-namespace Finller\Pappers\Tests;
+namespace Elegantly\Pappers\Tests;
 
-use Finller\Pappers\PappersServiceProvider;
+use Elegantly\Pappers\PappersServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Finller\\Pappers\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Elegantly\\Pappers\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

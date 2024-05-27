@@ -47,8 +47,8 @@ return [
 ## Usage
 
 ```php
-use Finller\Pappers\Facades\Pappers;
-use Finller\Pappers\Facades\EntrepriseRequest;
+use Elegantly\Pappers\Facades\Pappers;
+use Elegantly\Pappers\Facades\EntrepriseRequest;
 
 $entreprise = Pappers::client()->send(new EntrepriseRequest(
     siren: "897962361"

@@ -1,6 +1,6 @@
 <?php
 
-namespace Finller\Pappers\Integrations\Pappers;
+namespace Elegantly\Pappers\Integrations\Pappers;
 
 use Illuminate\Support\Facades\Cache;
 use Saloon\CachePlugin\Contracts\Cacheable;

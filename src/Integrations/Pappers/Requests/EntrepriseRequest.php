@@ -1,8 +1,8 @@
 <?php
 
-namespace Finller\Pappers\Integrations\Pappers\Requests;
+namespace Elegantly\Pappers\Integrations\Pappers\Requests;
 
-use Finller\Pappers\Enums\FormatPublicationsBodacc;
+use Elegantly\Pappers\Enums\FormatPublicationsBodacc;
 use Illuminate\Support\Arr;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
