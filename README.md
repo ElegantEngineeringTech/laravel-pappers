@@ -27,8 +27,16 @@ This is the contents of the published config file:
 
 ```php
 return [
-    'token' => env('PAPPERS_TOKEN'),
-    'version' => env('PAPPERS_VERSION'),
+
+    'france' => [
+        'token' => env('PAPPERS_FRANCE_TOKEN'),
+        'version' => env('PAPPERS_FRANCE_VERSION'),
+    ],
+
+    'international' => [
+        'token' => env('PAPPERS_INTERNATIONAL_TOKEN'),
+        'version' => env('PAPPERS_INTERNATIONAL_VERSION'),
+    ],
 
     'cache' => [
         'enabled' => true,
@@ -48,10 +56,20 @@ return [
 
 ```php
 use Elegantly\Pappers\Facades\Pappers;
-use Elegantly\Pappers\Facades\EntrepriseRequest;
+use Elegantly\Pappers\Integrations\France\Requests\EntrepriseRequest;
 
-$entreprise = Pappers::client()->send(new EntrepriseRequest(
+$entreprise = Pappers::france()->send(new EntrepriseRequest(
     siren: "897962361"
+));
+```
+
+```php
+use Elegantly\Pappers\Facades\Pappers;
+use Elegantly\Pappers\Integrations\International\Requests\CompanyRequest;
+
+$entreprise = Pappers::international()->send(new CompanyRequest(
+    country_code: "FR",
+    company_number: "897962361"
 ));
 ```
 
