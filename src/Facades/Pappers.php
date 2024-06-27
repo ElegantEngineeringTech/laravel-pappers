@@ -2,11 +2,13 @@
 
 namespace Elegantly\Pappers\Facades;
 
-use Elegantly\Pappers\Integrations\Pappers\PappersConnector;
+use Elegantly\Pappers\Integrations\France\PappersFranceConnector;
+use Elegantly\Pappers\Integrations\International\PappersInternationalConnector;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static PappersConnector client()
+ * @method static PappersFranceConnector france()
+ * @method static PappersInternationalConnector international()
  *
  * @see \Elegantly\Pappers\Pappers
  */

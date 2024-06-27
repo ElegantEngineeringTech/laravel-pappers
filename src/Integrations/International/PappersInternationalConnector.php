@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegantly\Pappers\Integrations\Pappers;
+namespace Elegantly\Pappers\Integrations\International;
 
 use Illuminate\Support\Facades\Cache;
 use Saloon\CachePlugin\Contracts\Cacheable;
@@ -15,9 +15,9 @@ use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
 use Saloon\RateLimitPlugin\Traits\HasRateLimits;
 
 /**
- * @see documentation at https://www.pappers.fr/api/documentation#tag/Fiche-entreprise/operation/entreprise
+ * @see documentation at https://www.pappers.in/api/documentation
  */
-class PappersConnector extends Connector implements Cacheable
+class PappersInternationalConnector extends Connector implements Cacheable
 {
     use HasCaching;
     use HasRateLimits;
@@ -37,7 +37,7 @@ class PappersConnector extends Connector implements Cacheable
 
     public function resolveBaseUrl(): string
     {
-        return "https://api.pappers.fr/{$this->version}/";
+        return "https://api.pappers.in/{$this->version}/";
     }
 
     protected function defaultHeaders(): array

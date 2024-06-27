@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegantly\Pappers\Integrations\Pappers\Requests;
+namespace Elegantly\Pappers\Integrations\France\Requests;
 
 use Elegantly\Pappers\Enums\FormatPublicationsBodacc;
 use Illuminate\Support\Arr;

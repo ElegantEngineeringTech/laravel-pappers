@@ -3,8 +3,16 @@
 // config for Elegantly/Pappers
 
 return [
-    'token' => env('PAPPERS_TOKEN'),
-    'version' => env('PAPPERS_VERSION'),
+
+    'france' => [
+        'token' => env('PAPPERS_FRANCE_TOKEN'),
+        'version' => env('PAPPERS_FRANCE_VERSION'),
+    ],
+
+    'international' => [
+        'token' => env('PAPPERS_INTERNATIONAL_TOKEN'),
+        'version' => env('PAPPERS_INTERNATIONAL_VERSION'),
+    ],
 
     'cache' => [
         'enabled' => true,
