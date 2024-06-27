@@ -29,12 +29,12 @@ This is the contents of the published config file:
 return [
 
     'france' => [
-        'token' => env('PAPPERS_FRANCE_TOKEN'),
+        'token' => env('PAPPERS_FRANCE_TOKEN', env('PAPPERS_TOKEN')),
         'version' => env('PAPPERS_FRANCE_VERSION'),
     ],
 
     'international' => [
-        'token' => env('PAPPERS_INTERNATIONAL_TOKEN'),
+        'token' => env('PAPPERS_INTERNATIONAL_TOKEN', env('PAPPERS_TOKEN')),
         'version' => env('PAPPERS_INTERNATIONAL_VERSION'),
     ],
 
