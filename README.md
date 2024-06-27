@@ -1,9 +1,9 @@
 # pappers.fr API for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/finller/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/finller/laravel-pappers)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/finller/laravel-pappers/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/finller/laravel-pappers/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/finller/laravel-pappers/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/finller/laravel-pappers/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/finller/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/finller/laravel-pappers)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/elegantly/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/elegantly/laravel-pappers)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ElegantEngineeringTech/laravel-pappers/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ElegantEngineeringTech/laravel-pappers/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/elegantly/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/elegantly/laravel-pappers)
 
 Easily use pappers.fr Entreprises API within Laravel.
 
@@ -14,7 +14,7 @@ Based on Saloon and supporting cache and rate limiting.
 You can install the package via composer:
 
 ```bash
-composer require finller/laravel-pappers
+composer require elegantly/laravel-pappers
 ```
 
 You can publish the config file with:
