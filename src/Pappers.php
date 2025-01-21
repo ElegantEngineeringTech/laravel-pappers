@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Elegantly\Pappers;
 
 use Elegantly\Pappers\Integrations\France\PappersFranceConnector;
@@ -15,16 +17,16 @@ class Pappers
     public function france(): PappersFranceConnector
     {
         return new PappersFranceConnector(
-            token: config('pappers.france.token'),
-            version: config('pappers.france.version') ?? 'v2',
+            token: config()->string('pappers.france.token'),
+            version: config()->string('pappers.france.version', 'v2'),
         );
     }
 
     public function international(): PappersInternationalConnector
     {
         return new PappersInternationalConnector(
-            token: config('pappers.international.token'),
-            version: config('pappers.international.version') ?? 'v1',
+            token: config()->string('pappers.international.token'),
+            version: config()->string('pappers.international.version', 'v1'),
         );
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Elegantly\Pappers\Facades;
 
 use Elegantly\Pappers\Integrations\France\PappersFranceConnector;
