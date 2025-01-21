@@ -29,7 +29,7 @@ class ValidSiretNumber implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (! is_string($value) && ! is_int($value)) {
-            $fail('The :attribute is not a valid SIRET number.');
+            $fail('pappers::validation.siret')->translate();
         }
 
         /**
@@ -38,7 +38,7 @@ class ValidSiretNumber implements ValidationRule
         $siret = (string) $value;
 
         if (mb_strlen($siret) !== 14) {
-            $fail('The :attribute must be exactly 14 digits.');
+            $fail('pappers::validation.siret_length')->translate();
         }
 
         $response = Pappers::france()->siret($siret);
@@ -47,14 +47,14 @@ class ValidSiretNumber implements ValidationRule
             $this->found &&
             $response->failed()
         ) {
-            $fail('The :attribute is not a valid SIRET number.');
+            $fail('pappers::validation.siret')->translate();
         }
 
         if (
             $this->active &&
             $response->json('entreprise_cessee')
         ) {
-            $fail('The :attribute is not associated with an active entity.');
+            $fail('pappers::validation.siret_active')->translate();
         }
     }
 }
