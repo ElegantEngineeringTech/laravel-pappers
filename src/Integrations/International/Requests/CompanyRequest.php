@@ -31,7 +31,7 @@ class CompanyRequest extends Request
             'fields' => collect($this->fields)
                 ->map(fn (CompanyFields $field) => $field->value)
                 ->implode(','),
-        ], fn ($value) => blank($value));
+        ], fn ($value) => ! blank($value));
     }
 
     public function resolveEndpoint(): string

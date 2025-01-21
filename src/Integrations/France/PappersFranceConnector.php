@@ -17,14 +17,12 @@ use Saloon\RateLimitPlugin\Contracts\RateLimitStore;
 use Saloon\RateLimitPlugin\Limit;
 use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
 use Saloon\RateLimitPlugin\Traits\HasRateLimits;
-use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
 /**
  * @see documentation at https://www.pappers.fr/api/documentation#tag/Fiche-entreprise/operation/entreprise
  */
 class PappersFranceConnector extends Connector implements Cacheable
 {
-    use AlwaysThrowOnErrors;
     use HasCaching;
     use HasRateLimits;
 

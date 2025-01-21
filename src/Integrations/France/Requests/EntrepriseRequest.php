@@ -42,7 +42,7 @@ class EntrepriseRequest extends Request
             'champs_supplementaires' => collect($this->champs_supplementaires)
                 ->map(fn (EntrepriseChampsSupplementaires $item) => $item->value)
                 ->implode(','),
-        ], fn ($value) => blank($value));
+        ], fn ($value) => ! blank($value));
     }
 
     public function resolveEndpoint(): string
