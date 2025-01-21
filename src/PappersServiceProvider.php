@@ -18,6 +18,7 @@ class PappersServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-pappers')
-            ->hasConfigFile();
+            ->hasConfigFile()
+            ->hasTranslations();
     }
 }
