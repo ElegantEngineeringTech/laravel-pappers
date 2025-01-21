@@ -16,17 +16,22 @@ class Pappers
 
     public function france(): PappersFranceConnector
     {
+        /** @var string $version */
+        $version = config('pappers.france.version') ?? 'v2';
+
         return new PappersFranceConnector(
             token: config()->string('pappers.france.token'),
-            version: config()->string('pappers.france.version', 'v2'),
+            version: $version,
         );
     }
 
     public function international(): PappersInternationalConnector
-    {
+    {/** @var string $version */
+        $version = config('pappers.international.version') ?? 'v1';
+
         return new PappersInternationalConnector(
             token: config()->string('pappers.international.token'),
-            version: config()->string('pappers.international.version', 'v1'),
+            version: $version,
         );
     }
 }
