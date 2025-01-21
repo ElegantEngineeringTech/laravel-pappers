@@ -18,19 +18,22 @@ class ValidLuhnSirenNumber implements ValidationRule
     {
         if (! is_string($value) && ! is_int($value)) {
             $fail('pappers::validation.siren')->translate();
+
+            return;
         }
 
-        /**
-         * @var string|int $value
-         */
         $siren = (string) $value;
 
         if (mb_strlen($siren) !== 9) {
             $fail('pappers::validation.siren_length')->translate();
+
+            return;
         }
 
         if (! static::check($siren)) {
             $fail('pappers::validation.siren')->translate();
+
+            return;
         }
     }
 

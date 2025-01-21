@@ -30,15 +30,16 @@ class ValidSiretNumber implements ValidationRule
     {
         if (! is_string($value) && ! is_int($value)) {
             $fail('pappers::validation.siret')->translate();
+
+            return;
         }
 
-        /**
-         * @var string|int $value
-         */
         $siret = (string) $value;
 
         if (mb_strlen($siret) !== 14) {
             $fail('pappers::validation.siret_length')->translate();
+
+            return;
         }
 
         $response = Pappers::france()->siret($siret);
@@ -48,6 +49,8 @@ class ValidSiretNumber implements ValidationRule
             $response->failed()
         ) {
             $fail('pappers::validation.siret')->translate();
+
+            return;
         }
 
         if (
@@ -55,6 +58,8 @@ class ValidSiretNumber implements ValidationRule
             $response->json('entreprise_cessee')
         ) {
             $fail('pappers::validation.siret_active')->translate();
+
+            return;
         }
     }
 }

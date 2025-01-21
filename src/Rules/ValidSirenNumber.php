@@ -30,21 +30,27 @@ class ValidSirenNumber implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
 
-        if ($this->luhn) {
-            (new ValidLuhnSirenNumber)->validate($attribute, $value, $fail);
-        }
-
         if (! is_string($value) && ! is_int($value)) {
             $fail('pappers::validation.siren')->translate();
+
+            return;
         }
 
-        /**
-         * @var string|int $value
-         */
         $siren = (string) $value;
 
         if (mb_strlen($siren) !== 9) {
             $fail('pappers::validation.siren_length')->translate();
+
+            return;
+        }
+
+        if (
+            $this->luhn &&
+            ! ValidLuhnSirenNumber::check($siren)
+        ) {
+            $fail('pappers::validation.siren')->translate();
+
+            return;
         }
 
         $response = Pappers::france()->siren($siren);
@@ -54,6 +60,8 @@ class ValidSirenNumber implements ValidationRule
             $response->failed()
         ) {
             $fail('pappers::validation.siren')->translate();
+
+            return;
         }
 
         if (
@@ -61,6 +69,8 @@ class ValidSirenNumber implements ValidationRule
             $response->json('entreprise_cessee')
         ) {
             $fail('pappers::validation.siren_active')->translate();
+
+            return;
         }
     }
 }
