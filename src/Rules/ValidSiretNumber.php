@@ -6,8 +6,9 @@ namespace Elegantly\Pappers\Rules;
 
 use Closure;
 use Elegantly\Pappers\Facades\Pappers;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-class ValidSiretNumber
+class ValidSiretNumber implements ValidationRule
 {
     /**
      * @param  bool  $found  Indicates if the SIREN number must exist in the database.
