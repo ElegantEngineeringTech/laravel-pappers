@@ -40,13 +40,13 @@ return [
 
     'cache' => [
         'enabled' => true,
-        'driver' => env('PAPPERS_CACHE_DRIVER', env('CACHE_DRIVER', 'file')),
+        'driver' => env('PAPPERS_CACHE_DRIVER', env('CACHE_STORE', env('CACHE_DRIVER', 'file'))),
         'expiry_seconds' => 604_800, // 1 week
     ],
 
     'rate_limit' => [
         'enabled' => false,
-        'driver' => env('PAPPERS_RATE_LIMIT_DRIVER', env('CACHE_DRIVER', 'file')),
+        'driver' => env('PAPPERS_RATE_LIMIT_DRIVER', env('CACHE_STORE', env('CACHE_DRIVER', 'file'))),
         'every_minute' => 30,
     ],
 ];
