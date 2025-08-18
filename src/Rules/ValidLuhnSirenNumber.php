@@ -10,14 +10,12 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class ValidLuhnSirenNumber implements ValidationRule
 {
     /**
-     * Run the validation rule.
-     *
      * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (! is_string($value) && ! is_int($value)) {
-            $fail('pappers::validation.siren')->translate();
+            $fail('pappers::validation.siren_format')->translate();
 
             return;
         }
@@ -31,7 +29,7 @@ class ValidLuhnSirenNumber implements ValidationRule
         }
 
         if (! static::check($siren)) {
-            $fail('pappers::validation.siren')->translate();
+            $fail('pappers::validation.siren_luhn')->translate();
 
             return;
         }

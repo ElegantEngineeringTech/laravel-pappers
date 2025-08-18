@@ -11,8 +11,9 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class ValidSirenNumber implements ValidationRule
 {
     /**
-     * @param  bool  $found  Indicates if the SIREN number must exist in the database.
-     * @param  bool  $active  Indicates if the SIREN number must represent an active entity.
+     * @param  bool  $luhn  Whether the SIREN number must pass the Luhn check.
+     * @param  bool  $found  Whether the SIREN number must exist in the database.
+     * @param  bool  $active  Whether the SIREN number must correspond to an active entity.
      */
     public function __construct(
         public bool $luhn = true,
@@ -31,7 +32,7 @@ class ValidSirenNumber implements ValidationRule
     {
 
         if (! is_string($value) && ! is_int($value)) {
-            $fail('pappers::validation.siren')->translate();
+            $fail('pappers::validation.siren_format')->translate();
 
             return;
         }
@@ -48,7 +49,7 @@ class ValidSirenNumber implements ValidationRule
             $this->luhn &&
             ! ValidLuhnSirenNumber::check($siren)
         ) {
-            $fail('pappers::validation.siren')->translate();
+            $fail('pappers::validation.siren_luhn')->translate();
 
             return;
         }

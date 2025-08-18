@@ -11,10 +11,12 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class ValidSiretNumber implements ValidationRule
 {
     /**
-     * @param  bool  $found  Indicates if the SIREN number must exist in the database.
-     * @param  bool  $active  Indicates if the SIREN number must represent an active entity.
+     * @param  bool  $luhn  Whether the SIRET number must pass the Luhn check.
+     * @param  bool  $found  Whether the SIRET number must exist in the database.
+     * @param  bool  $active  Whether the SIRET number must correspond to an active entity.
      */
     public function __construct(
+        public bool $luhn = true,
         public bool $found = true,
         public bool $active = true,
     ) {
@@ -29,7 +31,7 @@ class ValidSiretNumber implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (! is_string($value) && ! is_int($value)) {
-            $fail('pappers::validation.siret')->translate();
+            $fail('pappers::validation.siret_format')->translate();
 
             return;
         }
@@ -38,6 +40,17 @@ class ValidSiretNumber implements ValidationRule
 
         if (mb_strlen($siret) !== 14) {
             $fail('pappers::validation.siret_length')->translate();
+
+            return;
+        }
+
+        $siren = mb_substr($siret, 0, 9);
+
+        if (
+            $this->luhn &&
+            ! ValidLuhnSirenNumber::check($siren)
+        ) {
+            $fail('pappers::validation.siret_luhn')->translate();
 
             return;
         }
