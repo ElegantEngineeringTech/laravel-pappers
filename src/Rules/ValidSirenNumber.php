@@ -7,6 +7,7 @@ namespace Elegantly\Pappers\Rules;
 use Closure;
 use Elegantly\Pappers\Facades\Pappers;
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Translation\PotentiallyTranslatedString;
 
 class ValidSirenNumber implements ValidationRule
 {
@@ -26,7 +27,7 @@ class ValidSirenNumber implements ValidationRule
     /**
      * Run the validation rule.
      *
-     * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail
+     * @param  Closure(string, ?string=): PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
