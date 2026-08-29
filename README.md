@@ -1,9 +1,10 @@
 # pappers.fr API for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/elegantly/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/elegantly/laravel-pappers)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ElegantEngineeringTech/laravel-pappers/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ElegantEngineeringTech/laravel-pappers/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/elegantly/laravel-pappers.svg?style=flat-square)](https://packagist.org/packages/elegantly/laravel-pappers)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/elegantly/laravel-pappers.svg)](https://packagist.org/packages/elegantly/laravel-pappers)
+[![Total Downloads](https://img.shields.io/packagist/dt/elegantly/laravel-pappers.svg)](https://packagist.org/packages/elegantly/laravel-pappers)
+[![Tests](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/run-tests.yml)
+[![Laravel Pint](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/pint.yml/badge.svg)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/pint.yml)
+[![PHPStan](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/phpstan.yml/badge.svg)](https://github.com/ElegantEngineeringTech/laravel-pappers/actions/workflows/phpstan.yml)
 
 Easily use pappers.fr Entreprises API within Laravel.
 
