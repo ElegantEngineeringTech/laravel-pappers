@@ -19,7 +19,7 @@ return [
     'cache' => [
         'enabled' => true,
         'driver' => env('PAPPERS_CACHE_DRIVER', env('CACHE_STORE', env('CACHE_DRIVER', 'file'))),
-        'expiry_seconds' => 604_800, // 1 week
+        'expiry_seconds' => 86_400,
     ],
 
     'rate_limit' => [
