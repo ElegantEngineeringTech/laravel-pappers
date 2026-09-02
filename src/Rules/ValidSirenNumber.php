@@ -38,9 +38,15 @@ class ValidSirenNumber implements ValidationRule
             return;
         }
 
-        $siren = (string) $value;
+        $value = (string) $value;
 
-        if (mb_strlen($siren) !== 9) {
+        if (! ctype_digit($value)) {
+            $fail('pappers::validation.siren_format')->translate();
+
+            return;
+        }
+
+        if (mb_strlen($value) !== 9) {
             $fail('pappers::validation.siren_length')->translate();
 
             return;
@@ -48,14 +54,14 @@ class ValidSirenNumber implements ValidationRule
 
         if (
             $this->luhn &&
-            ! ValidLuhnSirenNumber::check($siren)
+            ! ValidLuhnSirenNumber::check($value)
         ) {
             $fail('pappers::validation.siren_luhn')->translate();
 
             return;
         }
 
-        $response = Pappers::france()->siren($siren);
+        $response = Pappers::france()->siren($value);
 
         if (
             $this->found &&

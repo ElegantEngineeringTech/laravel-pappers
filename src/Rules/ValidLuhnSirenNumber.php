@@ -21,15 +21,21 @@ class ValidLuhnSirenNumber implements ValidationRule
             return;
         }
 
-        $siren = (string) $value;
+        $value = (string) $value;
 
-        if (mb_strlen($siren) !== 9) {
+        if (! ctype_digit($value)) {
+            $fail('pappers::validation.siren_format')->translate();
+
+            return;
+        }
+
+        if (mb_strlen($value) !== 9) {
             $fail('pappers::validation.siren_length')->translate();
 
             return;
         }
 
-        if (! static::check($siren)) {
+        if (! static::check($value)) {
             $fail('pappers::validation.siren_luhn')->translate();
 
             return;
@@ -38,8 +44,8 @@ class ValidLuhnSirenNumber implements ValidationRule
 
     public static function checksum(int|string $siren): int
     {
-        if (! is_numeric($siren)) {
-            throw new \InvalidArgumentException(__FUNCTION__.' can only accept numeric values.');
+        if (! ctype_digit($siren)) {
+            throw new \InvalidArgumentException(__FUNCTION__.' can only accept digits.');
         }
 
         $value = (string) $siren;
