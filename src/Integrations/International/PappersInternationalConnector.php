@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Elegantly\Pappers\Integrations\International;
 
+use Elegantly\Pappers\Integrations\International\Enums\CompanyField;
 use Elegantly\Pappers\Integrations\International\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Cache;
 use Saloon\CachePlugin\Contracts\Cacheable;
@@ -83,6 +84,9 @@ class PappersInternationalConnector extends Connector implements Cacheable
         ];
     }
 
+    /**
+     * @param  array<array-key, string|CompanyField>  $fields
+     */
     public function number(
         string $country_code,
         string $company_number,
