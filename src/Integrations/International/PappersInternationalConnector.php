@@ -83,11 +83,15 @@ class PappersInternationalConnector extends Connector implements Cacheable
         ];
     }
 
-    public function number(string $country_code, string $company_number): Response
-    {
+    public function number(
+        string $country_code,
+        string $company_number,
+        array $fields = []
+    ): Response {
         return $this->send(new CompanyRequest(
             country_code: $country_code,
             company_number: $company_number,
+            fields: $fields
         ));
     }
 }
